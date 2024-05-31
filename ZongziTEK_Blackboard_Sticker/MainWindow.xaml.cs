@@ -1345,9 +1345,7 @@ namespace ZongziTEK_Blackboard_Sticker
         #region Launcher
         private async void LoadLauncher()
         {
-            ScrollViewerLauncher.Visibility = Visibility.Collapsed;
-            ProgressBarLauncher.Visibility = Visibility.Visible;
-
+           
             Dictionary<string, Drawing.Bitmap> fileInfo = new();
             string LinkPath = AppDomain.CurrentDomain.BaseDirectory + @"LauncherLinks\";
             if (!new DirectoryInfo(LinkPath).Exists)
@@ -1430,18 +1428,8 @@ namespace ZongziTEK_Blackboard_Sticker
                     LinkButton.Content = ContentStackPanel;
                     LinkButton.Click += LinkButton_Click;
 
-                    //往启动台里面添加按钮
-                    await Task.Run(() =>
-                    {
-                        Dispatcher.BeginInvoke(new Action(() =>
-                        {
-                            StackPanelLauncher.Children.Add(LinkButton);
-                        }));
-                    });
+                  
                 }
-
-                ScrollViewerLauncher.Visibility = Visibility.Visible;
-                ProgressBarLauncher.Visibility = Visibility.Collapsed;
             }
             catch (Exception e)
             {
@@ -1467,20 +1455,9 @@ namespace ZongziTEK_Blackboard_Sticker
         }
         private void ButtonReloadLauncher_Click(object sender, RoutedEventArgs e)
         {
-            ScrollViewerLauncher.Visibility = Visibility.Collapsed;
-            ProgressBarLauncher.Visibility = Visibility.Visible;
+          
 
-            Button buttonExplorerBackup = buttonExplorer;
-
-            StackPanelLauncher.Children.Clear();
-
-            Task.Run(() =>
-            {
-                Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    StackPanelLauncher.Children.Add(buttonExplorerBackup);
-                }));
-            });
+        
 
             Task.Run(() =>
             {
