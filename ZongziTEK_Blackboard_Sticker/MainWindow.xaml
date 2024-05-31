@@ -142,7 +142,7 @@
                     </Grid>
                 </Border>
 
-               
+
                 <!--课程表-->
                 <Border Grid.Row="1" Grid.Column="1" Background="{DynamicResource WindowBackgroundColor}" Margin="8,0,8,8" CornerRadius="8" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0">
                     <Grid>
@@ -187,15 +187,15 @@
                                 <TextBox x:Name="textBoxTempCurriculums" AcceptsReturn="True" TextWrapping="Wrap" FontSize="16" Foreground="{DynamicResource ForegroundColor}"/>
                             </ui:SimpleStackPanel>
                         </ui:ScrollViewerEx>
-                        <Border Grid.Row="1" Height="40" Margin="8" CornerRadius="8" VerticalAlignment="Bottom" Background="{Binding Background, ElementName=btnHideSettingsPanel}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0">
+                        <Border Grid.Row="1" Height="40" Margin="8" CornerRadius="8" VerticalAlignment="Bottom">
                             <Grid>
-                                <Label Content="课程表" VerticalAlignment="Center" Margin="8,0" FontSize="20"/>
+                                <Label Content="课程表" VerticalAlignment="Top" Margin="8,10,8,0" FontSize="20"/>
                                 <Button x:Name="saveCurriculumButton" Click="saveCurriculumButton_Click" Width="32" Height="32" Padding="0" Background="#00000000" BorderThickness="0" HorizontalAlignment="Right" Margin="8,0" Visibility="Collapsed">
                                     <ui:FontIcon Icon="{x:Static ui:FluentSystemIcons.Save_20_Regular}" FontSize="24"/>
                                 </Button>
                                 <Button Name="editCurriculumButton" BorderThickness="0" Background="#00000000" Foreground="{DynamicResource ForegroundColor}"
-                                            Width="32" Height="32" Padding="0" HorizontalAlignment="Right" Margin="8,0">
-                                    <ui:FontIcon Icon="{x:Static ui:FluentSystemIcons.MoreHorizontal_20_Regular}" FontSize="24"/>
+                                            Width="32" Height="32" Padding="0" HorizontalAlignment="Right" Margin="8,10,8,0">
+                                    <ui:FontIcon Icon="{x:Static ui:FluentSystemIcons.MoreHorizontal_20_Regular}" FontSize="24" RenderTransformOrigin="0.562,1.035"/>
                                     <ui:FlyoutService.Flyout>
                                         <ui:MenuFlyout>
                                             <MenuItem Name="MenuChooseTimetableToShow" Header="选择要展示的课表">
@@ -329,7 +329,7 @@
                                 <TextBlock Text="黑板通知服务路径" FontSize="14"/>
                                 <TextBox Name="TextBoxBNSPath" TextChanged="TextBoxBNSPath_TextChanged" Foreground="{DynamicResource ForegroundColor}" IsEnabled="{Binding IsOn, ElementName=ToggleSwitchUseDefaultBNSPath,Converter={StaticResource InverseBooleanConverter}}"/>-->
                                 <ui:SimpleStackPanel Spacing="4">
-                                    <Slider Name="SliderTimetableFontSize" ui:ControlHelper.Header="课程表字号" Minimum="16" Maximum="32" TickFrequency="1" IsSnapToTickEnabled="True" Value="24" TickPlacement="Both" HorizontalAlignment="Left" Width="400" PreviewMouseUp="SliderTimetableFontSize_PreviewMouseUp"/>
+                                    <Slider Name="SliderTimetableFontSize" ui:ControlHelper.Header="课程表字号" Minimum="16" Maximum="50" TickFrequency="1" IsSnapToTickEnabled="True" Value="24" TickPlacement="Both" HorizontalAlignment="Left" Width="400" PreviewMouseUp="SliderTimetableFontSize_PreviewMouseUp"/>
                                     <TextBlock FontSize="14" Text="{Binding Value, ElementName=SliderTimetableFontSize}"/>
                                 </ui:SimpleStackPanel>
                                 <ui:SimpleStackPanel Spacing="4">
